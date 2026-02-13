@@ -1,0 +1,96 @@
+Diseño e implementación de un agente de Inteligente reactivo
+--Control Inteligente de iluminación mediante arquitectura reactiva
+
+Un agente intelgiente es una funcion que mapea secuencias de percepsciones a acciones:
+f: P -> aDeonde P^* representa el conjunto de todas las secuencias posibles de percepciones y A el conjunto de acciones disponibles
+
+
+Componentes fundamentales:
+
+Percepciones (P) Información sensorial del entorno captada mediante sensores.
+Acciones (A) Operaciones que el agente va a hacer mediante los actuadores.
+Función del agente (f) Mapeo que determina la acción a ejecutar basándose en el historial de lo que ha percibido.
+Programa del Agente: Implementación concreta de una acción
+
+
+
+caracterización del entorno de operación
+Las propiedades del entorno no determinan la complejidad del diseño del agente y las estartegias de implementación más apropias.
+
+Observable vs Parcialmente Observable
+en el primero los sensores capturan toda la información relevante del estado.
+el segundo, existe incertidumbre sobre el estado completo, requiere mecanismos de inferencia o memoria interna
+
+Determinista vs Estocástico
+Determinista -> Garantiza que cada acción produce un resultado predecible único.
+Estocástico -> hay alietoriedad, las variables están sujetas a una distribución.
+La misma acción puede producir diferentes resultados.
+
+Estático vs Dinámico
+Estático. Permanecen inalterados mientras el agente delibera.
+Dinámicos. Evolucionan continuamente, requiriendo que el agente tome decisiones considerando la temporalidad y posibles cambios durante la ejecución.
+
+
+Agente único vs Multiagente
+AU. ultiples entidades inteligentes interactuan pudisndo cooperar y competir
+
+
+
+Ar. percepción-decisión-acción
+Constituye el paradigma más simple de agente inteligente, operando mediante un ciclo continuo de fases fundamentales.
+Elimina la necesidad de representaciones simbólicas complejas del mundo.
+
+
+
+Implementaremos un Agente reactivo:
+
+Objetivo
+Mantener niveles óptios de ilumnicación minizando el consume eléctrico.
+
+Percepciones
+Nivel de luz natural, presencia humana, hora del día
+
+Acciones
+Ajustar intensidad (0-100%), encender, apagar sistema
+
+componentes de hardware.
+
+fotoresistor LDR para medir luminosidad ambiente
+sensor PIR para detección de presencia
+módulo dimmer para control de intensidad
+Microcontrolador con interfaz de comunicación
+
+caracte del entorno:
+parcialmente Observable
+sensores limitados de luz y movimiento
+
+estocastico
+variablidad en luz naturas y patrones de ocupación
+
+dinamico
+condiciones de ambiente cambiantes durante operaciones
+
+discreto
+lecturas y acciones
+
+
+tabla de reglas del agente reactivo
+se define mediante un conjunto exhaustivo de reglas condición-acción
+las reglas priorizan el consumo energético cuando hay suficiente luz natural
+
+Por ejemplo:
+
+Primero debemos de definir cuales son los elementos que 
+En términos de luz natural, debemos de definir que es alto (<500), medio(200-500) y bajo(<200)
+El segundo que es la hora, si es diurno o nocturno.
+Presencia; hay personas o no hay personas.
+
+Acción que se va a tomar (acción)
+
+Lo siguiente es una combinación de todos estos elementos
+
+
+Lo primero para su proyecto es la problematica
+los elementos que se van a sensoria
+la tabla de reglas
+(que se va a percibir y que acciones se van a tomar)
